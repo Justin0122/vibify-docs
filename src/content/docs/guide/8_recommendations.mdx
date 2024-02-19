@@ -1,0 +1,58 @@
+---
+title: Music recommendations
+description: Create a playlist with the best music recommendations
+---
+import { Aside, LinkCard } from '@astrojs/starlight/components';
+import Response from '../../../pages/responses/recommendations.mdx';
+
+
+```js
+async function createRecommendationPlaylist(userid, genre, recentlyPlayed, mostPlayed, likedSongs, currentlyPlaying, useAudioFeatures, useTrackSeeds, targetValues){
+    try{
+        const recommendations = await vibify.createRecommendationPlaylist(userid, genre, recentlyPlayed, mostPlayed, likedSongs, currentlyPlaying, useAudioFeatures, useTrackSeeds, targetValues);
+        console.log('Recommendations:', recommendations);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+createRecommendationPlaylist('user-id', 'pop', true, true, true, false, true, false, {danceability: 0.8, energy: 0.8, valence: 0.8});
+```
+
+<Aside type="caution" title="Note">
+  <p>targetValues accepts an object with properties, but not all are required!</p>
+</Aside>
+
+<LinkCard
+    title="Target Values"
+    description="Learn more about the target values object"
+    href="/reference/target-values"
+/>
+
+
+### Parameters
+
+<Aside type="caution" title="Note">
+    <p>Some parameters may interfere with each other, so be careful when using them together. The default values are set to provide the best recommendations possible. However, some parameters are needed if others aren't set. For example, `genre` is required if `seed_artists` and `seed_tracks` are not set.</p>
+
+    <p>For more information about the parameters, check the <a href="https://developer.spotify.com/documentation/web-api/reference/get-recommendations" target="_blank">Spotify API documentation</a>.</p>
+</Aside>
+
+Default parameters for the `createRecommendationPlaylist` function:
+
+- userId: No default value. *`required`*.
+- genre: Default value is `null`. *`optional`*.
+- recentlyPlayed: Default value is `false`. *`optional`*.
+- mostPlayed: Default value is `true`. *`optional`*.
+- likedSongs: Default value is `true`. *`optional`*.
+- currentlyPlaying: Default value is `false`. *`optional`*.
+- useAudioFeatures: Default value is `true`. *`optional`*.
+- useTrackSeeds: Default value is `false`. *`optional`*.
+- targetValues: Default value is an empty object `{}`. *`optional`*.
+
+
+### Response
+
+<div data-pagefind-ignore>
+    <Response data-pagefind-ignore />
+</div>

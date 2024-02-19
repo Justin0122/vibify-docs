@@ -1,0 +1,27 @@
+---
+title: Get Currently Playing
+description: How to get the currently playing song
+---
+
+import Response from '../../../pages/responses/currentlyPlaying.mdx'
+
+To display the currently playing song, you can use the `getCurrentlyPlaying` method. This method returns the currently playing track for the user.
+
+```js
+async function getCurrentlyPlaying(userId) {
+    try {
+        const track = await vibify.getCurrentlyPlaying(userId);
+        console.log('Currently Playing:', track);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+getCurrentlyPlaying('user-id');
+```
+
+### Response
+
+<div data-pagefind-ignore>
+<Response data-pagefind-ignore />
+</div>

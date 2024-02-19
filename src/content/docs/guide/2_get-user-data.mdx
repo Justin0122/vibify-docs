@@ -1,0 +1,27 @@
+---
+title: Get User Data
+description: Learn how to get user data from the API
+---
+
+import Response from '../../../pages/responses/userData.mdx';
+
+Getting the user data is a simple process. You can use the `getUser` method to get the user data. The `getUser` method takes the user ID as an argument and returns the user data.
+
+```js
+async function getUserData(userId) {
+    try {
+        const user = await vibify.getUser(userId);
+        console.log('User Information:', user);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+getUserData('user-id');
+```
+
+### Response
+
+<div data-pagefind-ignore>
+<Response data-pagefind-ignore />
+</div>

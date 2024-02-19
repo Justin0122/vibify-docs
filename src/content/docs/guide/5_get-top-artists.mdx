@@ -1,0 +1,27 @@
+---
+title: Get Top Artists
+description: This example shows how to get the user's top artists.
+---
+
+import Response from '../../../pages/responses/topArtists.mdx';
+
+To display the user's top artists, you can use the `getTopArtists` method. This method returns an array of the user's top artists.
+
+```js
+async function getLastListenedTracks(userId, amount){
+    try{
+        const tracks = await vibify.getTopArtists(userId, amount);
+        console.log('Last Listened Tracks:', tracks);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+getLastListenedTracks('user-id', 1);
+```
+
+### Returns
+
+<div data-pagefind-ignore>
+    <Response data-pagefind-ignore />
+</div>

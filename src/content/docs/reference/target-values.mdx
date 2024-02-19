@@ -1,0 +1,49 @@
+---
+title: target values
+---
+
+import {Aside, LinkCard} from "@astrojs/starlight/components";
+
+- acousticness (0.0 to 1.0) - how acoustic the song is
+- danceability (0.0 to 1.0) - how suitable the song is for dancing
+- energy (0.0 to 1.0) - how energetic the song is
+- instrumentalness (0.0 to 1.0) - how instrumental the song is
+- liveness (0.0 to 1.0) - how lively the song is
+- loudness (-60.0 to 0.0) - how loud the song is
+- speechiness (0.0 to 1.0) - how much speech is in the song
+- valence (0.0 to 1.0) - how positive the song is
+- tempo - the tempo of the song
+- key (0 to 11) - the key of the song (0 = C, 1 = C♯/D♭, 2 = D, and so on)
+- mode (0 or 1) - the modality of the song (0 = minor, 1 = major)
+- time_signature (0 to 5) - the time signature of the song
+
+<Aside type="note" title="Note">
+    <p>For the targetValues parameter, you can use any of the properties listed above. You can also use multiple properties at the same time.</p>
+    <LinkCard
+        title="Learn more"
+        description="Learn more about the values you can use for the targetValues parameter"
+        href="https://developer.spotify.com/documentation/web-api/reference/get-recommendations"
+        target="_blank"
+    />
+</Aside>
+
+## Example
+
+```js
+const targetValues = {
+    acousticness: 0.5,
+    danceability: 0.5,
+    energy: 0.5,
+    instrumentalness: 0.5,
+    liveness: 0.5,
+    loudness: -30,
+    speechiness: 0.5,
+    valence: 0.5,
+    tempo: 120,
+    key: 0,
+    mode: 1,
+    time_signature: 4
+};
+
+const recommendations = await spotify.getRecommendations('user-id', 'pop', true, true, true, false, true, false, targetValues);
+```

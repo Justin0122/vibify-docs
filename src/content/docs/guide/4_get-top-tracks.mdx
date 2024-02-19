@@ -1,0 +1,27 @@
+---
+title: Get Top Tracks
+description: This example shows how to get the user's top tracks.
+---
+
+import Response from '../../../pages/responses/topTracks.mdx';
+
+To display the user's top tracks, you can use the `getTopTracks` method. This method returns an array of the user's top tracks.
+
+```js
+async function getTopTracks(userId, amount) {
+    try {
+        const tracks = await vibify.getTopTracks(userId, amount);
+        console.log('Top Tracks:', tracks);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+getTopTracks('user-id', 10);
+```
+
+### Response
+
+<div data-pagefind-ignore>
+<Response data-pagefind-ignore />
+</div>

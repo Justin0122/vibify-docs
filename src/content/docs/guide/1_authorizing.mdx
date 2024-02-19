@@ -1,0 +1,31 @@
+---
+title: Authorizing
+description: Authorizing with Vibify
+---
+
+import Response from '../../../pages/responses/authorize.mdx';
+import { LinkCard } from "@astrojs/starlight/components";
+
+Authorizing with Vibify. You can use the `authorize` method to get the authorization URL for the user to authorize your application.
+```js
+async function authorize(userId) {
+    const url = await vibify.authorize(userId);
+    console.log('Url:', url);
+}
+
+authorize('user-id');
+```
+
+### Response
+
+<div data-pagefind-ignore>
+    <Response data-pagefind-ignore />
+</div>
+
+<LinkCard
+    href="https://developer.spotify.com/documentation/web-api/concepts/scopes"
+    title="Spotify Scopes"
+    description="The set of scopes you pass in your authentication request determines the access permissions that the user is asked to grant."
+    target="_blank"
+    rel="noopener"
+/>

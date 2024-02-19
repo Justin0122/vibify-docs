@@ -1,0 +1,36 @@
+---
+title: Welcome to Vibify
+description: All you need to integrate the Vibify API in your projects. Browse methods to access music data and build playlists.
+template: splash
+hero:
+  tagline: All you need to integrate the Vibify API in your projects. Browse methods to access music data and build playlists.
+  image:
+    file: ../../assets/houston.webp
+  actions:
+    - text: Get started
+      link: /introduction
+      icon: right-arrow
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/Justin0122/VibifyClient
+      icon: external
+---
+
+import {Card, CardGrid, LinkCard} from '@astrojs/starlight/components';
+
+## Next steps
+
+<CardGrid stagger>
+	<Card title="Getting started" icon="right-arrow">
+        <p>Learn how to get started with Vibify and start building your first playlist.</p>
+    </Card>
+    <Card title="API reference" icon="right-arrow">
+        <p>Explore the Vibify API and learn how to access music data and build playlists.</p>
+    </Card>
+    <LinkCard
+        href="https://github.com/justin0122/VibifyClient"
+        title="GitHub"
+        description="View the source code for the Vibify API client."
+        target="_blank"
+    />
+</CardGrid>

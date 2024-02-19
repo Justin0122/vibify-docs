@@ -1,0 +1,44 @@
+---
+title: Create a playlist
+Description: Create a playlist from your liked songs from a specific period (month and year).
+---
+import Response from '../../../pages/responses/createPlaylist.mdx';
+import { Aside, LinkCard } from '@astrojs/starlight/components';
+
+This method allows you to create a playlist from your liked songs from a specific period (`month` and `year`).
+
+<Aside type="note" header="Note">
+    This method may use *a lot* of API requests, depending on how many liked songs a user has. It's recommended to use this method sparingly.
+
+    Consider liking my post on the Spotify Community to let Spotify know that there is a better way to retrieve liked songs based on when they were liked.
+
+    <LinkCard
+        href="https://community.spotify.com/t5/Spotify-for-Developers/Time-Based-Song-Retrieval/m-p/5862058"
+        title="Community post"
+        description="Community post about time-based song retrieval."
+        target="_blank"
+    />
+</Aside>
+
+```js
+async function createPlaylist(userid, month, year){
+    const playlistName = `Liked Songs from ${new Date(year, month - 1, 1).toLocaleString('en-US', { month: 'short' })} ${year}.`;
+    // (Liked songs from Feb 2024.)
+    try{
+        const playlist = await vibify.createPlaylist(userid, playlistName, month, year);
+        console.log('Playlist:', playlist);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+createPlaylist('user-id', 1, 2024);
+```
+The `playlistName` is optional and will default to `Liked Songs from {month} {year}`, as shown in the example above.
+
+### Response
+
+<div data-pagefind-ignore>
+    <Response data-pagefind-ignore />
+</div>
+

@@ -1,0 +1,49 @@
+---
+title: Getting Started
+description: Get started with Vibify.
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+Vibify is a music service that helps users discover new music based on their preferences and listening habits. It offers features like retrieving currently playing tracks, top tracks, top artists, creating playlists, and generating recommendation playlists.
+
+## Setting up the Server
+
+Make sure you have Node.js installed, then clone the repository and install the dependencies.
+
+```bash
+git clone https://github.com/justin0122/vibify.git
+cd vibify
+npm install
+```
+
+Create a `.env` file in the root directory and add the following environment variables.
+
+```bash
+SPOTIFY_CLIENT_SECRET="YOUR_SPOTIFY_CLIENT_SECRET"
+SPOTIFY_CLIENT_ID="YOUR_SPOTIFY_CLIENT_ID"
+SPOTIFY_REDIRECT_URI="YOUR_SPOTify_REDIRECT_URI"
+
+DEV_MODE=true
+
+DB_HOST="YOUR_DB_HOST"
+DB_NAME="YOUR_DB_NAME"
+DB_USER="YOUR_DB_USER"
+DB_PASS="YOUR_DB_PASS"
+
+APPLICATION_ID="YOUR_APPLICATION_ID"
+```
+
+Create a database and run the migrations.
+
+```bash
+npm run createdb
+npm run migrate
+```
+
+Start the server.
+
+```bash
+npm start
+```
+

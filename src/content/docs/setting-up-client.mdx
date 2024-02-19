@@ -1,0 +1,29 @@
+---
+title: Vibify Client
+description: Setting up the Vibify client
+---
+
+Once the server is up and running, you can set up the client to send requests to the server.
+
+### Install
+
+```bash
+npm i @vibify/vibify
+```
+
+### Prerequisites
+
+Set the following environment variables in your `.env` file in the root of your project.
+
+```bash
+VIBIFY_API_URL="YOUR_API_URL" # The URL of the server you set up
+APPLICATION_ID="YOUR_APPLICATION_ID" # The same application id you used to set up the server
+```
+
+### Usage
+
+```js
+import { Vibify } from '@vibify/vibify';
+
+const vibify = new Vibify();
+```
