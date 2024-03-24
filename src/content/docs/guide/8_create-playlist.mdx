@@ -22,7 +22,7 @@ This method allows you to create a playlist from your liked songs from a specifi
 
 ```js
 async function createPlaylist(userid, month, year){
-    const playlistName = `Liked Songs from ${new Date(year, month - 1, 1).toLocaleString('en-US', { month: 'short' })} ${year}.`;
+    const playlistName = `Liked Tracks from ${new Date(year, month - 1, 1).toLocaleString('en-US', { month: 'short' })} ${year}.`;
     // (Liked songs from Feb 2024.)
     try{
         const playlist = await vibify.createPlaylist(userid, playlistName, month, year);
@@ -34,7 +34,7 @@ async function createPlaylist(userid, month, year){
 
 createPlaylist('user-id', 1, 2024);
 ```
-The `playlistName` is optional and will default to `Liked Songs from {month} {year}`, as shown in the example above.
+The `playlistName` is optional and will default to `Liked Tracks from {month} {year}`, as shown in the example above.
 
 ### Response
 

@@ -9,7 +9,7 @@ To display the user's last listened tracks, you can use the `getLastListenedTrac
 
 ```js
 async function getLastListenedTracks(userId, amount){
-    try{
+    try {
         const tracks = await vibify.getLastListenedTracks(userId, amount);
         console.log('Last Listened Tracks:', tracks);
     } catch (error) {

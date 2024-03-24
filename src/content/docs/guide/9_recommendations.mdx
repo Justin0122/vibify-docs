@@ -7,9 +7,9 @@ import Response from '../../../pages/responses/recommendations.mdx';
 
 
 ```js
-async function createRecommendationPlaylist(userid, genre, recentlyPlayed, mostPlayed, likedSongs, currentlyPlaying, useAudioFeatures, useTrackSeeds, targetValues){
+async function createRecommendationPlaylist(userid, genre, recentlyPlayed, mostPlayed, likedTracks, currentlyPlaying, useAudioFeatures, useTrackSeeds, targetValues){
     try{
-        const recommendations = await vibify.createRecommendationPlaylist(userid, genre, recentlyPlayed, mostPlayed, likedSongs, currentlyPlaying, useAudioFeatures, useTrackSeeds, targetValues);
+        const recommendations = await vibify.createRecommendationPlaylist(userid, genre, recentlyPlayed, mostPlayed, likedTracks, currentlyPlaying, useAudioFeatures, useTrackSeeds, targetValues);
         console.log('Recommendations:', recommendations);
     } catch (error) {
         console.error('Error:', error);
@@ -44,7 +44,7 @@ Default parameters for the `createRecommendationPlaylist` function:
 - genre: Default value is `null`. *`optional`*
 - recentlyPlayed: Default value is `false`. *`optional`*
 - mostPlayed: Default value is `true`. *`optional`*
-- likedSongs: Default value is `true`. *`optional`*
+- likedTracks: Default value is `true`. *`optional`*
 - currentlyPlaying: Default value is `false`. *`optional`*
 - useAudioFeatures: Default value is `true`. *`optional`*
 - useTrackSeeds: Default value is `false`. *`optional`*
