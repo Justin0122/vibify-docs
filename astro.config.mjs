@@ -6,10 +6,10 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Vibify',
-			logo: {
-				light: './src/assets/light-logo.webp',
-				dark: './src/assets/dark-logo.webp',
-			},
+			// logo: {
+			// 	light: './src/assets/light-logo.webp',
+			// 	dark: './src/assets/dark-logo.webp',
+			// },
 			social: {
 				github: 'https://github.com/justin0122/vibify',
 			},
