@@ -17,7 +17,11 @@ async function getTopTracks(userId, amount) {
     }
 }
 
-getTopTracks('user-id', 10);
+getTopTracks('user-id', 1);
+```
+Or with cURL:
+```bash
+curl -H "x-api-key:: (your api key)" http://localhost:3000/user/(user-id)/top-tracks?amount=1
 ```
 
 ### Response

@@ -19,6 +19,11 @@ async function createRecommendationPlaylist(userid, genre, recentlyPlayed, mostP
 createRecommendationPlaylist('user-id', 'pop', true, true, true, false, true, false, {danceability: 0.8, energy: 0.8, valence: 0.8});
 ```
 
+Or with cURL:
+```bash
+curl -s -X POST -H "Content-Type: application/json" -H "x-api-key: (your api key)" -d "{\"id\":\"(your user id)\", \"genre\":\"pop\", \"recentlyPlayed\":true, \"mostPlayed\":true, \"likedTracks\":true, \"currentlyPlaying\":false}" "http://localhost:3000/recommendations"
+```
+
 <Aside type="caution" title="Note">
   <p>targetValues accepts an object with properties, but not all are required!</p>
 </Aside>

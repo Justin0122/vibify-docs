@@ -4,9 +4,10 @@ description: Authorizing with Vibify
 ---
 
 import Response from '../../../pages/responses/authorize.mdx';
-import { LinkCard } from "@astrojs/starlight/components";
+import {LinkCard, Aside} from "@astrojs/starlight/components";
 
 Authorizing with Vibify. You can use the `authorize` method to get the authorization URL for the user to authorize your application.
+
 ```js
 async function authorize(userId) {
     const url = await vibify.authorize(userId);
@@ -15,12 +16,41 @@ async function authorize(userId) {
 
 authorize('user-id');
 ```
+Or with cURL:
+```bash
+curl https://localhost:3000l/authorize/user-id
+```
+
+<Aside type="note">
+    When going to the URL, the user will be asked to log in and authorize your application. After the user has
+    authorized your application, they will be redirected to the redirect URL you specified in the `.env` file of the
+    server. In this case it will return the API key as a json response.
+</Aside>
 
 ### Response
 
 <div data-pagefind-ignore>
-    <Response data-pagefind-ignore />
+    <Response data-pagefind-ignore/>
 </div>
+
+### Response after clicking the link
+
+```json
+{
+  "api_token":"7d5649cd1bd7253ddbd15e098459f15ba04..."
+}
+```
+<Aside type="note">
+    The API token is used for future requests using cURL. Disregard the API token if you are using the SDK.
+</Aside>
+
+### Scopes
+
+Scopes let you specify exactly what type of access you need. Scopes limit access for OAuth tokens. They do not grant any additional permission beyond that which the user already has. In this case, the SDK already has the necessary scopes for what it's capable of doing.
+
+<Aside type="note">
+    The user will be asked to authorize the scopes you specify in the `scopes` parameter of the `authorize` method.
+</Aside>
 
 <LinkCard
     href="https://developer.spotify.com/documentation/web-api/concepts/scopes"

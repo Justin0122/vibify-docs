@@ -20,6 +20,11 @@ async function getLastListenedTracks(userId, amount){
 getLastListenedTracks('user-id', 1);
 ```
 
+Or with cURL:
+```bash
+curl -H "x-api-key: (your api key)" "http://localhost:3000/recently-played/(user-id)?amount=1"
+```
+
 ### Returns
 
 <div data-pagefind-ignore>

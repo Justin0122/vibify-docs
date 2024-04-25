@@ -36,6 +36,11 @@ createPlaylist('user-id', 1, 2024);
 ```
 The `playlistName` is optional and will default to `Liked Tracks from {month} {year}`, as shown in the example above.
 
+Or with cURL:
+```bash
+curl -X POST -H "x-api-key: (your api key)" -d '{"id":"(user id)","month":"12","year":"2023","playlistName":"My Playlist"}' http://localhost:3000/create-playlist
+```
+
 ### Response
 
 <div data-pagefind-ignore>
