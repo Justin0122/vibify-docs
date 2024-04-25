@@ -10,11 +10,11 @@ Authorizing with Vibify. You can use the `authorize` method to get the authoriza
 
 ```js
 async function authorize(userId) {
-    const url = await vibify.authorize(userId);
-    console.log('Url:', url);
+    return await vibify.authorize(userId);
 }
 
-authorize('user-id');
+const link = authorize('user-id');
+console.log("URL: ", link);
 ```
 Or with cURL:
 ```bash
