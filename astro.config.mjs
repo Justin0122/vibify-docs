@@ -28,7 +28,18 @@ export default defineConfig({
 				},
 				{
 					label: 'Guides',
-					autogenerate: { directory: 'guide' },
+					items: [
+						{ label: 'Authorizing', link: 'guide/authorizing' },
+						{ label: 'Get User Data', link: 'guide/get-user-data' },
+						{ label: 'Get Currently Playing', link: 'guide/get-currently-playing' },
+						{ label: 'Get Top Tracks', link: 'guide/get-top-tracks' },
+						{ label: 'Get Top Artists', link: 'guide/get-top-artists' },
+						{ label: 'Get Recently Played', link: 'guide/get-recently-played' },
+						{ label: 'Get Last Liked', link: 'guide/get-last-liked' },
+						{ label: 'Create a Playlist', link: 'guide/create-playlist' },
+						{ label: 'Create Filtered Playlist', link: 'guide/filter-liked' },
+						{ label: 'Music Recommendations', link: 'guide/recommendations' },
+					],
 				},
 				{
 					label: 'Reference',

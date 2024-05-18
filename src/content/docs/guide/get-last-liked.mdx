@@ -8,16 +8,16 @@ import Response from '../../../pages/responses/lastLiked.mdx';
 To display the user's last liked tracks, you can use the `getLastLikedTracks` method. This method returns an array of the user's last liked tracks.
 
 ```js
-async function getLastLikedTracks(userId, amount){
+async function getLastLikedTracks(userId, amount, offset){
     try {
-        const tracks = await vibify.getLastLikedTracks(userId, amount);
+        const tracks = await vibify.getLastLikedTracks(userId, amount, offset);
         console.log('Last Liked Tracks:', tracks);
     } catch (error) {
         console.error('Error:', error);
     }
 }
 
-getLastLikedTracks('user-id', 1);
+getLastLikedTracks('user-id', 1, 0);
 ```
 
 Or with cURL:

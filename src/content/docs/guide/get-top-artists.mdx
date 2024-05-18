@@ -8,16 +8,16 @@ import Response from '../../../pages/responses/topArtists.mdx';
 To display the user's top artists, you can use the `getTopArtists` method. This method returns an array of the user's top artists.
 
 ```js
-async function getTopArtists(userId, amount){
+async function getTopArtists(userId, amount, offset){
     try {
-        const tracks = await vibify.getTopArtists(userId, amount);
+        const tracks = await vibify.getTopArtists(userId, amount, offset);
         console.log('Last Listened Tracks:', tracks);
     } catch (error) {
         console.error('Error:', error);
     }
 }
 
-getTopArtists('user-id', 1);
+getTopArtists('user-id', 1, 0);
 ```
 
 Or with cURL:

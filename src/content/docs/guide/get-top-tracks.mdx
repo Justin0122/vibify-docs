@@ -8,16 +8,16 @@ import Response from '../../../pages/responses/topTracks.mdx';
 To display the user's top tracks, you can use the `getTopTracks` method. This method returns an array of the user's top tracks.
 
 ```js
-async function getTopTracks(userId, amount) {
+async function getTopTracks(userId, amount, offset) {
     try {
-        const tracks = await vibify.getTopTracks(userId, amount);
+        const tracks = await vibify.getTopTracks(userId, amount, offset);
         console.log('Top Tracks:', tracks);
     } catch (error) {
         console.error('Error:', error);
     }
 }
 
-getTopTracks('user-id', 1);
+getTopTracks('user-id', 1, 0);
 ```
 Or with cURL:
 ```bash

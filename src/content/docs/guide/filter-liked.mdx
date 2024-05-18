@@ -1,0 +1,30 @@
+---
+title: Filter Liked Tracks
+description: Create a playlist with the filtered liked tracks
+---
+import { Aside, LinkCard } from '@astrojs/starlight/components';
+import Response from '../../../pages/responses/recommendations.mdx';
+
+
+```js
+async function filterLikedTracks(userid, filter, playlistName){
+    try{
+        const filteredPlaylist = await vibify.filterLikedTracks(userid, filter, playlistName); //playlist name is optional
+        console.log('Filtered Playlist:', filteredPlaylist);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+filterLikedTracks('user-id', ["artists:bbno$", "artists:yung gravy"]);
+```
+
+Or with cURL:
+```bash
+curl -s -X POST -H "Content-Type: application/json" -H "x-api-key: (your api key)" -d "{\"id\":\"user-id\", \"filter\":[\"artists:bbno$\", \"artists:yung gravy\"], \"playlistName\":\"optional playlist name\"}" "http://localhost:3000/filter-liked-tracks"
+```
+
+<Aside type="caution" title="Note">
+    This will immediately return a response. It will add the filtered liked tracks to a new playlist in the background, as it can take a while to complete (depending on the number of liked tracks).
+    The tracks will be added in real time as they are filtered.
+</Aside>

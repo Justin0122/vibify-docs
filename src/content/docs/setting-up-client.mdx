@@ -25,6 +25,8 @@ APPLICATION_ID="YOUR_APPLICATION_ID" # The same application id you used to set u
 
 ```js
 import { Vibify } from '@vibify/vibify';
+import dotenv from 'dotenv';
+dotenv.config();
 
-const vibify = new Vibify();
+const vibify = new Vibify(process.env.VIBIFY_API_URL, process.env.APPLICATION_ID);
 ```
