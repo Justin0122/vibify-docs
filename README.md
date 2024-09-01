@@ -12,9 +12,3 @@ Welcome to Vibify-Docs! This is the documentation website for [Vibify](https://g
 ## License
 
 Vibify-Docs is licensed under the [MIT License](LICENSE).
-
-## Feedback
-
-I hope you find Vibify-Docs useful! If you have any feedback, questions, or concerns, please don't hesitate to [contact me](mailto:justin@justinjongstra.nl). I'd love to hear from you!
-
-Happy coding!
